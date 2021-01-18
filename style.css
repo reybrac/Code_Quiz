@@ -1,0 +1,19 @@
+#myBtn{
+    height: 50%;
+    width: 25%;
+    background-color: goldenrod;
+    color: blue;
+    align-self: center;
+    padding: 5px;
+}
+
+#timer{
+    height: 50%;
+    width: 25%;
+    background-color: darkslategray;
+    color: white;
+    font-size: x-large;
+    box-shadow: black;
+    align-self: center;
+    text-align: center;
+}
