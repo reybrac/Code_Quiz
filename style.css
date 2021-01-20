@@ -17,3 +17,29 @@
     align-self: center;
     text-align: center;
 }
+
+#quiz-section{
+    height: 400px;
+    width: auto;
+}
+
+li {
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 1.em;
+    line-height: 1.5; 
+}
+
+li::before{
+    content: "\200B";
+    position: absolute;
+}
+
+li::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+

@@ -3,11 +3,17 @@ var secondsLeft = 10;
 document.getElementById("myText").innerHTML = secondsLeft; 
 var timeEl = document.querySelector(".time");
 
+var questions = {question1: "A very useful tool used during development and debugging for printing content to the debugger is:"};
+var choices = {choices1: ["Javascript", "Terminal bash", "for Loops", "Console log"]};
+var accuracy = {accuracy1: "Console log"};
+
+var quizChoices = document.querySelector("#accuracy")
+
 hello.addEventListener("click", function(){
-    
-    setTime();  
-    questions();
     init();
+    setTime();  
+    quiz();
+    
 });
 
 function setTime() {
@@ -31,14 +37,35 @@ function setTime() {
     
 }
 
-function questions() {
-    var question1 = "A very useful too used during development and debugging for printing content to the debugger is:";
-    document.getElementById("questions").innerHTML = question1;
+function quiz() {
+    
+    document.getElementById("questions").innerHTML = questions.question1;
+    console.log(questions.question1);
+    quizChoices.innerHTML = "";
+
+    for (var i = 0; i < choices.choices1.length; i++) {
+        var listChoices = choices.choices1[i];
+    
+        var li = document.createElement("li");
+        
+        li.setAttribute("data-index", i);
+    
+        var button = document.createElement("button");
+        button.textContent = listChoices;
+    
+        li.appendChild(button);
+        quizChoices.appendChild(li);
+      }
+    
+    
+
 
 }
 
 function init(){
     secondsLeft = 10;
+    quizChoices.innerHTML = "";
+
     
 }
 
