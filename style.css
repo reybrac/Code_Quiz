@@ -19,7 +19,7 @@
 }
 
 #quiz-section{
-    height: 400px;
+    height: 350px;
     width: auto;
 }
 
@@ -43,3 +43,14 @@ li::after{
     clear: both;
 }
 
+#highScores{
+    height: 50%;
+    width: 12%;
+    align-self: flex-start;
+}
+
+#currentScore{
+    align-self: flex-end;
+    height: 50%;
+    width: 12%;
+}

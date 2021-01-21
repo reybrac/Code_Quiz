@@ -11,8 +11,12 @@
 <body>
     <header class="jumbotron bg-dark" style="color: white; text-align: center; padding: 40px;">
         <h1>Code quiz</h1>
+        <p>Try to answer the following code-related questions within the time limit. 
+            Keep in mind that incorrect answers will penalze your score by 5 points!</p>
         <br>
+       
         <button id="myBtn">Start</button>
+
     </header>
     <div class="card container" id="quiz-section" style="outline: auto; padding-top: 30px;">
         <h2 >Questions</h2>
@@ -25,7 +29,9 @@
         
         
     </div>
-    <div class="card container" style="outline: auto; padding-top: 5px;">
+    <div  class="card container" style="outline: auto; padding-top: 5px;">
+        <button id="highScores">View HighScores</button>
+        <span id="currentScore"></span>
         <div id="timer">
             <p>Time left</p>
             <span id="myText"></span>
