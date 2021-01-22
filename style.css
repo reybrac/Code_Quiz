@@ -45,9 +45,12 @@ li::after{
 }
 
 #highScores{
-    height: 50%;
-    width: 12%;
-    align-self: flex-start;
+    height: 5%;
+    width: 10%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: chartreuse;
 }
 
 #currentScore{

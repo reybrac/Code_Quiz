@@ -45,8 +45,10 @@ li::after{
 
 #highScores{
     height: 50%;
-    width: 12%;
-    align-self: flex-start;
+    width: 10%;
+    position: absolute;
+    left: 100px;
+    background-color: chartreuse;
 }
 
 #currentScore{
