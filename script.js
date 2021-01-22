@@ -57,6 +57,7 @@ function endGame(){
 function quizQues1() {
     //Question 1 beginning -- until I can figure out how to improve this code
     document.getElementById("quiz-section").style.visibility = "visible";
+    document.getElementById("accuracy").innerHTML = "";
     document.getElementById("questions").innerHTML = exampleQues[0].question;
     console.log(exampleQues);
    

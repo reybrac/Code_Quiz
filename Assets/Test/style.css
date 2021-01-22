@@ -1,0 +1,56 @@
+#myBtn{
+    height: 50%;
+    width: 25%;
+    background-color: goldenrod;
+    color: blue;
+    align-self: center;
+    padding: 5px;
+}
+
+#timer{
+    height: 50%;
+    width: 25%;
+    background-color: darkslategray;
+    color: white;
+    font-size: x-large;
+    box-shadow: black;
+    align-self: center;
+    text-align: center;
+}
+
+#quiz-section{
+    height: 350px;
+    width: auto;
+}
+
+li {
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 1.em;
+    line-height: 1.5; 
+}
+
+li::before{
+    content: "\200B";
+    position: absolute;
+}
+
+li::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+#highScores{
+    height: 50%;
+    width: 12%;
+    align-self: flex-start;
+}
+
+#currentScore{
+    align-self: flex-end;
+    height: 50%;
+    width: 12%;
+}
