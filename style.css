@@ -5,11 +5,12 @@
     color: blue;
     align-self: center;
     padding: 5px;
+    font-size: x-large;
 }
 
 #timer{
-    height: 50%;
-    width: 25%;
+    height: 40%;
+    width: 20%;
     background-color: darkslategray;
     color: white;
     font-size: x-large;
@@ -19,7 +20,7 @@
 }
 
 #quiz-section{
-    height: 350px;
+    height: 100%;
     width: auto;
 }
 
