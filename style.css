@@ -46,7 +46,7 @@ li::after{
 
 #highScores{
     height: 5%;
-    width: 10%;
+    width: Auto%;
     position: absolute;
     top: 10px;
     left: 10px;

@@ -37,6 +37,21 @@ var exampleQues = [
         choices: ["Shredder", "Snakeweed", "Splinter", "April"],
         accuracy: ["Splinter"]
     },
+    {
+        question: "What city do the Ninja turtles live in?",
+        choices: ["New York", "Los Angeles", "Chicago", "Portland"],
+        accuracy: ["New York"]
+    },
+    {
+        question: "What color are the ninja turtles?",
+        choices: ["Green", "Blue", "Purple", "Yellow"],
+        accuracy: ["Green"]
+    },
+    {
+        question: "What is the name of Rhino in Ninja turtles?",
+        choices: ["Bebop", "Baxter", "Rocksteady", "Shredder"],
+        accuracy: ["Rocksteady"]
+    },
    
 ];
 
@@ -50,7 +65,7 @@ start.addEventListener("click", function(){
     init();
     setTime();  
     quizQues1();
-    highScore();
+    
 });
 
 
@@ -70,7 +85,7 @@ function setTime() {
             clearInterval(timerInterval);
             document.getElementById("myBtn").disabled = false;
             endGame();
-            
+            //highScore();
         }
         
 
@@ -123,7 +138,7 @@ quizChoices.addEventListener("click", function(event){
                     if(quizIndex >= exampleQues.length){
                         // highScore();
                         console.log("Game over");
-                        
+                        endGame();
                     }else{
                        quizQues1(); 
                     }
