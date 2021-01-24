@@ -56,9 +56,10 @@ var exampleQues = [
 ];
 
 var quizIndex = 0;
-
+var userName = [ ];
 var quizChoices = document.querySelector("#choices");
 var quizSection = document.querySelector("#quiz-section");
+var hsSection = document.querySelector("#high-scores");
 
 start.addEventListener("click", function(){
     
@@ -77,15 +78,18 @@ function setTime() {
         document.getElementById("myText").innerHTML = secondsLeft; 
 
         if(secondsLeft === 0) {
-            
+            endGame();
             document.getElementById("myText").innerHTML = "Game over!";
-            var name = prompt("You scored " + score + " Enter your initials to save your high score");
-            localStorage.setItem("High score", name + " " + score);
+            getName = prompt("You scored " + score + " Enter your initials to save your high score");
+            userName = getName;
+            localStorage.setItem("High score", JSON.stringify(userName));
+            var finalScore = score;
+            localStorage.setItem("Final score", finalScore);
 
             clearInterval(timerInterval);
             document.getElementById("myBtn").disabled = false;
-            endGame();
-            //highScore();
+            
+            
         }
         
 
@@ -119,6 +123,7 @@ function quizQues1() {
 
 }
 
+
 quizChoices.addEventListener("click", function(event){
     if(event.target.matches("button")){
                 
@@ -136,7 +141,7 @@ quizChoices.addEventListener("click", function(event){
                     quizIndex++;
                     
                     if(quizIndex >= exampleQues.length){
-                        // highScore();
+                        
                         console.log("Game over");
                         endGame();
                     }else{
@@ -157,9 +162,9 @@ quizChoices.addEventListener("click", function(event){
                     quizIndex++;
                     
                     if(quizIndex >= exampleQues.length){
-                        // highScore();                      
+                                              
                         console.log("Game over");
-                        
+                        endGame();
                     }else{
                        quizQues1(); 
                     }
@@ -181,6 +186,9 @@ function init(){
     secondsLeft = 15;
     quizIndex = 0;
     quizChoices.innerHTML = "";    
+    document.getElementById("quiz-section-header").innerHTML = "Questions";
+    document.getElementById("high-scores").innerHTML = "";
+
 }
 
 
@@ -189,12 +197,31 @@ function endGame(){
     
 }
 
+
+
 function highScore(){
-     
-}   
+    
+    
+    document.getElementById("quiz-section-header").innerHTML = "High Score";
+    document.getElementById("high-scores").style.visibility = "visible";
+    document.getElementById("quiz-section-header").style.visibility = "visible";
+    var hsName = JSON.parse(localStorage.getItem("High score"));
+    hsName.push(userName);
+    if (hsName !== null){
+        userName = hsName;
+        document.querySelector("#high-scores").textContent = userName + " " + score;
+    }
+        
+
+    console.log('hsName', hsName);
+    console.log('userName', userName);
+
+} 
+
 viewHs.addEventListener("click", function(){
-    document.getElementById("quiz-section").style.visibility = "hidden"
-    alert("ive been clicked");
+    document.getElementById("quiz-section").style.visibility = "hidden";
+    //alert("ive been clicked");
+    highScore();
 });
 
 init();
