@@ -51,6 +51,8 @@ li::after{
     top: 10px;
     left: 10px;
     background-color: chartreuse;
+    align-items: center;
+    text-align: center;
 }
 
 #currentScore{

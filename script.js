@@ -5,7 +5,7 @@ document.getElementById("myText").innerHTML = secondsLeft;
 var timeEl = document.querySelector(".time");
 var score = 0;
 
-
+// Question section
 var exampleQues = [
     {
         question: "What is the ninja turtles favorite food?",
@@ -61,6 +61,7 @@ var quizChoices = document.querySelector("#choices");
 var quizSection = document.querySelector("#quiz-section");
 var hsSection = document.querySelector("#high-scores");
 
+// Start button section
 start.addEventListener("click", function(){
     
     init();
@@ -71,7 +72,7 @@ start.addEventListener("click", function(){
 });
 
 
-
+// Timer section
 function setTime() {
     document.getElementById("myBtn").disabled = true;
     var timerInterval = setInterval(function() {
@@ -102,7 +103,7 @@ function quizQues1() {
     document.getElementById("questions").innerHTML = exampleQues[quizIndex].question;
     console.log(exampleQues);
    
-
+    //quizIndex = Math.floor(Math.random() * exampleQues.length);
     for (var i = 0; i < exampleQues[quizIndex].choices.length; i++) {
         var listChoices = exampleQues[quizIndex].choices[i];
     
@@ -192,9 +193,7 @@ function init(){
 function endGame(){
     document.getElementById("quiz-section").style.visibility = "hidden";
     document.getElementById("myText").innerHTML = "Game over!";
-    //userName = prompt("You scored " + score + " Enter your initials to save your high score");
-            //userName = getName;
-    //localStorage.setItem("High score", JSON.stringify(userName + score));       
+    
     
         
 }
@@ -211,24 +210,23 @@ function currentScore(){
     var addName = (ev) =>{
         ev.preventDefault();
         var name ={
-            //id: Date.now(),
+            
             name: document.getElementById("name").value,
             score: score
-            //year: document.getElementById("yr").value
+            
         }
         userName.push(name);
         document.querySelector("form").reset();
 
         console.warn("added", {userName});
-        var pre = document.querySelector("#high-scores");
-        pre.textContent = "\n" + JSON.stringify(userName, "\t", 2);
 
         localStorage.setItem("current-score", JSON.stringify(userName));
     }
-        //document.addEventListener("DOMContentLoaded", ()=>{
+        
         document.getElementById("submit-btn").addEventListener("click", addName);
-        document.getElementById("quiz-section").style.visibility = "hidden";
-    //});
+        
+        document.getElementById("form").style.visibility = "hidden";
+    
     console.log("userName", userName);
 
 
@@ -239,21 +237,11 @@ function highScore(){
     document.getElementById("quiz-section-header").innerHTML = "High Score";
     document.getElementById("high-scores").style.visibility = "visible";
     document.getElementById("quiz-section-header").style.visibility = "visible";
+    document.getElementById("form").style.visibility = "hidden";
     
-    
-    // if (localStorage.getItem("High score") === null){
-        
-    //     userName=[];
-    // }else{
-    //     userName = JSON.parse(localStorage.getItem("High score"));
-        
-    document.querySelector("#high-scores").textContent = localStorage.getItem("current-score");
-    // }
-    
-    //  localStorage.setItem("High score", JSON.stringify(userName));
-
-    
-    // console.log('userName', userName);
+   
+    var lsHs = document.querySelector("#high-scores");
+    lsHs.textContent = "\n" + JSON.stringify(userName, "\t", 2);
 
 } 
 
