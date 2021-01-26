@@ -206,30 +206,31 @@ function currentScore(){
     document.getElementById("form").style.visibility = "visible";
     document.getElementById("quiz-section-header").innerHTML = "You scored " + score + " points. Enter your initials to save your high scores";
     document.getElementById("quiz-section-header").style.textAlign = "center";
-    
+}
     
     var addName = (ev) =>{
         ev.preventDefault();
         var name ={
             //id: Date.now(),
             name: document.getElementById("name").value,
-            score
+            score: score
             //year: document.getElementById("yr").value
         }
         userName.push(name);
         document.querySelector("form").reset();
 
         console.warn("added", {userName});
-        // var pre = document.querySelector("#msg pre");
-        // pre.textContent = "\n" + JSON.stringify(movies, "\t", 2);
+        var pre = document.querySelector("#high-scores");
+        pre.textContent = "\n" + JSON.stringify(userName, "\t", 2);
 
-        localStorage.setItem("current-score", JSON.stringify(userName + score));
+        localStorage.setItem("current-score", JSON.stringify(userName));
     }
-    document.addEventListener("DOMContentLoaded", ()=>{
+        //document.addEventListener("DOMContentLoaded", ()=>{
         document.getElementById("submit-btn").addEventListener("click", addName);
-    });
+        document.getElementById("quiz-section").style.visibility = "hidden";
+    //});
     console.log("userName", userName);
-}
+
 
 
 function highScore(){
@@ -246,7 +247,7 @@ function highScore(){
     // }else{
     //     userName = JSON.parse(localStorage.getItem("High score"));
         
-    document.querySelector("#high-scores").textContent = userName;
+    document.querySelector("#high-scores").textContent = localStorage.getItem("current-score");
     // }
     
     //  localStorage.setItem("High score", JSON.stringify(userName));
