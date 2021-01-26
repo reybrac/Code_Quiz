@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>Quiz Code</title>
 </head>
@@ -22,7 +23,9 @@
     </header>
     <div class="card container" id="quiz-section" style="outline: none; padding-top: 30px;">
         <h2 id="quiz-section-header" >Questions</h2>
-        <div id="high-scores"></div>
+        <div id="high-scores">
+            
+        </div>
         <div>
             <span id="questions"></span>
             <br>
@@ -30,6 +33,15 @@
             <span id="accuracy"></span>
             
         </div>
+        <form id="form">
+            <div class="formBox">
+                <label id="title">Initials</label>
+                <input type="text" id="name" placeholder="initials"/>
+            </div>
+            <div class="formBox">
+                <button id= "submit-btn">Click to submit</button>
+            </div>
+        </form>
         
         
     </div>

@@ -46,7 +46,7 @@ li::after{
 
 #highScores{
     height: 5%;
-    width: Auto%;
+    width: Auto;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -57,4 +57,15 @@ li::after{
     align-self: flex-end;
     height: 50%;
     width: 12%;
+}
+
+#quiz-section form{
+    padding-bottom: 30px;
+    font-size: x-large;
+    box-shadow: black;
+    align-self: center;
+    text-align: center;
+    align-content: center;
+
+    
 }
