@@ -22,15 +22,15 @@
     align-self: center;
     text-align: center;
     position:fixed;
-    top: 200px;
+    top: 245px;
     right: 10px;
 }
 
 #highScores{
-    height: 5%;
+    height: auto;
     width: Auto;
     position: absolute;
-    top: 200px;
+    top: 250px;
     left: 10px;
     background-color: chartreuse;
     align-items: center;
