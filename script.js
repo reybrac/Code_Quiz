@@ -200,7 +200,7 @@ function endGame(){
 
 function currentScore(){
    
-    document.getElementById("quiz-section-header").style.visibility = "visible";
+    //document.getElementById("quiz-section-header").style.visibility = "visible";
     document.getElementById("high-scores").style.visibility = "visible";
     document.getElementById("form").style.visibility = "visible";
     document.getElementById("quiz-section-header").innerHTML = "You scored " + score + " points. Enter your initials to save your high scores";
@@ -209,25 +209,29 @@ function currentScore(){
     
     var addName = (ev) =>{
         ev.preventDefault();
-        var name =[
+        var name ={
             
-            document.getElementById("name").value + score
+            Initials: document.getElementById("name").value,
+            Score: score
             
-        ]
+        }
         userName.push(name);
         document.querySelector("form").reset();
 
         //console.warn("added", userName);
 
         localStorage.setItem("current-score", JSON.stringify(userName));
-    }
-        
-        document.getElementById("submit-btn").addEventListener("click", addName);
-        
-        document.getElementById("form").style.visibility = "hidden";
     
-    console.log("userName", userName);
-
+     }    
+        document.getElementById("submit-btn").addEventListener("click", addName);
+            if(true){
+                document.getElementById("form").style.visibility = "hidden";
+                document.getElementById("quiz-section-header").style.visibility = "hidden";
+            }
+        
+    
+        console.log("userName", userName);
+   
 
 
 function highScore(){
@@ -240,8 +244,14 @@ function highScore(){
     
    
     var lsHs = document.querySelector("#high-scores");
-    localStorage.getItem("current-score", JSON.stringify(userName));
-    lsHs.textContent = localStorage.getItem("current-score", JSON.stringify(userName));
+    var example = JSON.parse(localStorage.getItem("current-score"));
+    for(var i = 0; i < example.length; i++ ){
+        var para = document.createElement("p");
+        para.classList.add("final");
+        para.textContent = example[i].Initials + " : " + example[i].Score;
+        lsHs.appendChild(para);
+    }
+    
     
 } 
 

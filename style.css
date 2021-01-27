@@ -72,12 +72,24 @@ li::after{
 }
 
 #quiz-section form{
-    /* padding-bottom: 5px; */
+    
     font-size: x-large;
     box-shadow: black;
     align-self: center;
     text-align: center;
     align-content: center;
-
     
+}
+
+.final{
+    background-color: blue;
+    border: 1px solid blue;
+    border-radius: 20px;
+    width: auto;
+    fill: blue;
+    font-size: x-large;
+    color:white;
+    box-shadow: black;
+    align-self: center;
+    text-align: center;
 }
