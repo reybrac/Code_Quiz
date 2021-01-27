@@ -13,8 +13,8 @@
 }
 
 #timer{
-    height: 15%;
-    width: 10%;
+    height: auto;
+    width: auto;
     background-color: black;
     color: white;
     font-size: x-large;
