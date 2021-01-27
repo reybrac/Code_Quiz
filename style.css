@@ -22,7 +22,7 @@
     align-self: center;
     text-align: center;
     position:fixed;
-    top: 245px;
+    top: 225px;
     right: 10px;
 }
 
@@ -30,7 +30,7 @@
     height: auto;
     width: Auto;
     position: absolute;
-    top: 300px;
+    top: 280px;
     left: 10px;
     background-color: chartreuse;
     align-items: center;
