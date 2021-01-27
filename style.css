@@ -8,19 +8,37 @@
     font-size: x-large;
 }
 
+.jumbotron{
+    background-color: darkblue;
+}
+
 #timer{
-    height: 40%;
-    width: 20%;
-    background-color: darkslategray;
+    height: 15%;
+    width: 10%;
+    background-color: black;
     color: white;
     font-size: x-large;
     box-shadow: black;
     align-self: center;
     text-align: center;
+    position:fixed;
+    top: 200px;
+    right: 10px;
+}
+
+#highScores{
+    height: 5%;
+    width: Auto;
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    background-color: chartreuse;
+    align-items: center;
+    text-align: center;
 }
 
 #quiz-section{
-    height: 100%;
+    height: auto;
     width: auto;
 }
 
@@ -28,7 +46,7 @@ li {
     height: 40px;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding: 5px;
+    padding: 2px;
     font-size: 1.em;
     line-height: 1.5; 
 }
@@ -44,25 +62,17 @@ li::after{
     clear: both;
 }
 
-#highScores{
-    height: 5%;
-    width: Auto;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: chartreuse;
-    align-items: center;
-    text-align: center;
-}
+
 
 #currentScore{
     align-self: flex-end;
+    align-items: center;
     height: 50%;
     width: 12%;
 }
 
 #quiz-section form{
-    padding-bottom: 30px;
+    /* padding-bottom: 5px; */
     font-size: x-large;
     box-shadow: black;
     align-self: center;

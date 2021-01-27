@@ -209,16 +209,15 @@ function currentScore(){
     
     var addName = (ev) =>{
         ev.preventDefault();
-        var name ={
+        var name =[
             
-            name: document.getElementById("name").value,
-            score: score
+            document.getElementById("name").value + score
             
-        }
+        ]
         userName.push(name);
         document.querySelector("form").reset();
 
-        console.warn("added", {userName});
+        //console.warn("added", userName);
 
         localStorage.setItem("current-score", JSON.stringify(userName));
     }
@@ -241,8 +240,9 @@ function highScore(){
     
    
     var lsHs = document.querySelector("#high-scores");
-    lsHs.textContent = "\n" + JSON.stringify(userName, "\t", 2);
-
+    localStorage.getItem("current-score", JSON.stringify(userName));
+    lsHs.textContent = localStorage.getItem("current-score", JSON.stringify(userName));
+    
 } 
 
 viewHs.addEventListener("click", function(){
