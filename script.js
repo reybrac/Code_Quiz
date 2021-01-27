@@ -94,7 +94,7 @@ function setTime() {
     
 }
 
-
+// Quiz questions and answer choices
 function quizQues1() {
     
     document.getElementById("quiz-section").style.visibility = "visible";
@@ -120,7 +120,7 @@ function quizQues1() {
 
 }
 
-
+// Section checks the accuracy of the answer clicked and adds/deducts value of the score variable
 quizChoices.addEventListener("click", function(event){
     if(event.target.matches("button")){
                 
@@ -177,7 +177,7 @@ quizChoices.addEventListener("click", function(event){
     
     });
 
-
+// Initialization section that resets variables and sections that are displaed
 function init(){
     
     secondsLeft = 15;
@@ -189,24 +189,23 @@ function init(){
 
 }
 
-
+// End game section that hides sections and sends a game over message
 function endGame(){
     document.getElementById("quiz-section").style.visibility = "hidden";
-    document.getElementById("myText").innerHTML = "Game over!";
-    
-    
-        
+    document.getElementById("myText").innerHTML = "Game over!"; 
 }
 
+// Current score section to show what the users current score was for the game
 function currentScore(){
    
-    //document.getElementById("quiz-section-header").style.visibility = "visible";
+    
     document.getElementById("high-scores").style.visibility = "visible";
     document.getElementById("form").style.visibility = "visible";
     document.getElementById("quiz-section-header").innerHTML = "You scored " + score + " points. Enter your initials to save your high scores";
     document.getElementById("quiz-section-header").style.textAlign = "center";
 }
-    
+
+// Section to send the user initials to local storage
     var addName = (ev) =>{
         ev.preventDefault();
         var name ={
@@ -218,7 +217,6 @@ function currentScore(){
         userName.push(name);
         document.querySelector("form").reset();
 
-        //console.warn("added", userName);
 
         localStorage.setItem("current-score", JSON.stringify(userName));
     
@@ -232,7 +230,7 @@ function currentScore(){
     
         console.log("userName", userName);
    
-
+// Highscore section that determines what to hide and what to show the user when the highscore button is clicked
 
 function highScore(){
     
@@ -261,4 +259,4 @@ viewHs.addEventListener("click", function(){
     highScore();
 });
 
-init();
+//init();
